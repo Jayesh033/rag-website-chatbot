@@ -3,33 +3,29 @@ import google.generativeai as genai
 from dotenv import load_dotenv
 
 load_dotenv()
-
-# Configure Google Gemini API
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
-# ✅ FREE MODEL
 model = genai.GenerativeModel("models/gemini-flash-lite-latest")
 
 def generate_answer(question, context_chunks):
     if not context_chunks:
-        return "No relevant information found on the website."
+        return "No relevant information found from the website."
 
-    # Build context from retrieved chunks
     context = "\n\n".join(
-        [chunk["text"][:500] for chunk in context_chunks]
+        [chunk["text"][:800] for chunk in context_chunks]
     )
 
     prompt = f"""
-You are a helpful assistant.
-Answer the question ONLY using the context below.
-If the answer is not present, say "Information not available".
+You are an AI assistant answering questions using ONLY the content below.
 
-Context:
+Content:
 {context}
 
 Question:
 {question}
+
+Provide a helpful, summarized answer based strictly on the content.
 """
 
     response = model.generate_content(prompt)
-    return response.text
+    return response.text.strip()
