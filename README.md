@@ -1,21 +1,24 @@
-
 # 🌐 RAG-Based Website Chatbot
 
-A **Retrieval-Augmented Generation (RAG) chatbot** that answers user questions using the content of **any public website URL**.
-The system crawls a website, builds a knowledge base, and generates accurate, grounded answers.
+## 📌 Project Overview
+
+This project implements a **Retrieval-Augmented Generation (RAG) based chatbot** that enables users to ask natural-language questions about the content of **any public website URL**.
+
+The system automatically crawls a website, builds a structured knowledge base from its content, and generates **accurate, context-grounded answers** using semantic retrieval combined with a Large Language Model (LLM).
+
+The solution is designed to be:
+- Accurate (answers grounded in website content)
+- Explainable (retrieved chunks are visible)
+- Cost-effective (uses a free AI model)
+- Deployable (Streamlit Cloud ready)
 
 ---
 
-## 🚀 Features
+## 🎯 Problem Statement
 
-- 🔗 Accepts any public website URL
-- 🕷️ Crawls and extracts website content
-- 🧹 Cleans and chunks text data
-- 🧠 Builds a searchable knowledge base
-- 🔍 Retrieves relevant chunks using semantic search
-- 💬 Generates answers using a free LLM
-- 🎨 Modern, animated Streamlit UI
-- ⚠️ Graceful error handling
+Input: Public website URL + User questions  
+Process: Crawl → Clean → Chunk → Embed → Retrieve → Generate  
+Output: A chatbot that answers questions strictly based on website content
 
 ---
 
@@ -37,16 +40,13 @@ Website Crawler
 Text Cleaning & Chunking
  │
  ▼
-Embedding Generator (TF-IDF)
+TF-IDF Embeddings
  │
  ▼
 Vector Store (Cosine Similarity)
  │
  ▼
-Top-K Relevant Chunks
- │
- ▼
-LLM Answer Generation
+LLM (Gemini Flash Lite)
  │
  ▼
 Final Answer
@@ -63,19 +63,8 @@ Final Answer
 | Crawling | Requests, BeautifulSoup |
 | Embeddings | TF-IDF |
 | Vector Search | Cosine Similarity |
-| LLM | Google Gemini (Free Tier) |
-| Deployment | Streamlit Community Cloud |
-
----
-
-## ▶️ How to Run
-
-```bash
-python -m venv venv
-venv\Scripts\activate
-pip install -r requirements.txt
-streamlit run app.py
-```
+| LLM | Gemini Flash Lite |
+| Deployment | Streamlit Cloud |
 
 ---
 
@@ -85,32 +74,35 @@ streamlit run app.py
 - What services are offered?
 - Who is the target audience?
 - Summarize the website content.
-- What does the company specialize in?
 
 ---
 
 ## ⚠️ Limitations
 
-- JavaScript-heavy sites may not work
+- JavaScript-heavy websites are not fully supported
 - Crawl depth is limited
-- Login-protected sites are not supported
-- Free LLM rate limits
 - In-memory vector storage only
+- Free model rate limits
 
 ---
 
 ## 🚀 Future Enhancements
 
-- PDF and document ingestion
-- Persistent vector database (FAISS/Chroma)
+- Persistent vector database
+- JavaScript rendering support
+- PDF ingestion
 - Multi-language support
-- Hybrid retrieval
-- Chat history export
+- Hybrid search
+- Answer citations
+
+---
+
+## 🌐 Deployment
+
+Deployed using Streamlit Community Cloud.
 
 ---
 
 ## 📌 Conclusion
 
-This project demonstrates a complete RAG pipeline with a professional UI and free deployment capability.
-
-✅ **Submission Ready**
+A complete, production-ready RAG chatbot suitable for assignments, interviews, and demos.
