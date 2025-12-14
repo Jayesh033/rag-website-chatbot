@@ -16,9 +16,9 @@ The solution is designed to be:
 
 ## 🎯 Problem Statement
 
-Input: Public website URL + User questions  
-Process: Crawl → Clean → Chunk → Embed → Retrieve → Generate  
-Output: A chatbot that answers questions strictly based on website content
+**Input:** Public website URL + User questions  
+**Process:** Crawl → Clean → Chunk → Embed → Retrieve → Generate  
+**Output:** A chatbot that answers questions strictly based on website content
 
 ---
 
@@ -99,10 +99,4 @@ Final Answer
 
 ## 🌐 Deployment
 
-Deployed using Streamlit Community Cloud.
-
----
-
-## 📌 Conclusion
-
-A complete, production-ready RAG chatbot suitable for assignments, interviews, and demos.
+Deployed using **Streamlit Community Cloud**.
